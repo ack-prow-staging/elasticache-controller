@@ -1,0 +1,13 @@
+# CacheSecurityGroup with tags for testing tag operations
+apiVersion: elasticache.services.k8s.aws/v1alpha1
+kind: CacheSecurityGroup
+metadata:
+  name: $CACHE_SECURITY_GROUP_NAME
+spec:
+  cacheSecurityGroupName: $CACHE_SECURITY_GROUP_NAME
+  description: $DESCRIPTION
+  tags:
+    - key: "Environment"
+      value: "test"
+    - key: "Purpose"
+      value: "e2e-testing"
